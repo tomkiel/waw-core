@@ -18,12 +18,26 @@ button {
         &:active {
             background-color: var(--primary-dark);
             outline: none;
-            transform: scale(.98);
+            transform: scale(0.98);
         }
         &:hover {
             background-color: var(--primary-twilight);
             outline: none;
         }
+    }
+
+    &.transparent {
+        background-color: transparent;
+
+        &:hover {
+        }
+    }
+
+    &.navigate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.4em;
     }
 
     &[type="submit"] {

@@ -47,34 +47,63 @@
             }
         }
         .login-content {
+            position: relative;
             flex: 2;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            .login-username {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-            .input-username {
-                h4 {
-                    font-size: 1.5rem;
-                    font-weight: 600;
-                }
-            }
-            .create-account,
-            .help {
-                padding-bottom: 1em;
-                a {
-                    text-decoration: none;
-                    color: var(--primary);
-
-                    &.a-link {
-                        margin-left: 0.5em;
+                .input-username {
+                    h4 {
+                        font-size: 1.5rem;
+                        font-weight: 600;
                     }
                 }
+                .create-account,
+                .help {
+                    padding-bottom: 1em;
+                    a {
+                        text-decoration: none;
+                        color: var(--primary);
+
+                        &.a-link {
+                            margin-left: 0.5em;
+                        }
+                    }
+                }
+                .to-password {
+                    justify-self: flex-end;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+                &.active {
+                    animation-name: show-from-left;
+                }
+                &.inactive {
+                    display: none;
+                }
             }
-            .to-password {
-                justify-self: flex-end;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
+            .login-confirm {
+                flex: 1;
+                .back-to-username {
+                    display: flex;
+                    align-items: center;
+
+                    .username {
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+                &.active {
+                    animation-name: show-from-right;
+                }
+                &.inactive {
+                    display: none;
+                }
             }
         }
     }

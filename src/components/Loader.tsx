@@ -1,12 +1,7 @@
-import React from "react";
+import React from 'react';
 
-const Loader = () => {
-
-    return (
-        <div className="loader">
-            <img src="assets/images/linux.svg" alt="App Logo"></img>
-        </div>
-    )
+export default function Loader(): JSX.Element {
+  return (
+    <h2>Loading..</h2>
+  );
 }
-
-export default Loader;

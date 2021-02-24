@@ -1,16 +1,10 @@
-import React, { Component } from 'react';
-import { HashRouter} from 'react-router-dom';
+import React from 'react';
+import { HashRouter } from 'react-router-dom';
 
-import Auth from './auth';
+import { AuthRoutes } from './auth';
 
-class Routes extends Component {
-    render() {
-        return (
-            <HashRouter>
-                <Auth />
-            </HashRouter>
-        )
-    }
-}
-
-export default Routes;
+export const Routes = () : JSX.Element => (
+  <HashRouter>
+    <AuthRoutes />
+  </HashRouter>
+);
