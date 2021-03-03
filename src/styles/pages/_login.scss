@@ -34,36 +34,67 @@
         padding: 2em;
         box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
         margin-bottom: 2em;
-        display: flex;
-        flex-direction: column;
         color: var(--darker);
+        display: grid;
+        grid-template-rows: 1.5em auto;
+        row-gap: 1em;
 
         .login-header {
-            flex: 1;
+            display: contents;
+
             .logo-url-action {
                 img {
-                    height: 1.5em;
+                    height: 100%;
                 }
             }
         }
         .login-content {
             position: relative;
-            flex: 2;
             display: flex;
-            .login-username {
+            .login-username,
+            .login-confirm {
                 flex: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
 
-                .input-username {
+                .input {
                     h4 {
-                        font-size: 1.5rem;
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        margin-bottom: 0.5em;
+                    }
+                    .error-message {
+                        position: relative;
+                        top: 0.3em;
+                        bottom: 0.3em;
+                        color: var(--danger);
                         font-weight: 600;
                     }
                 }
-                .create-account,
                 .help {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 1em;
+                    a {
+                        padding-bottom: 1em;
+                        text-decoration: none;
+                        color: var(--primary);
+
+                        &.a-link {
+                            margin-left: 0.5em;
+                        }
+                    }
+                }
+                .to-action {
+                    justify-self: flex-end;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+            .login-username {
+                .create-account {
                     padding-bottom: 1em;
                     a {
                         text-decoration: none;
@@ -74,12 +105,6 @@
                         }
                     }
                 }
-                .to-password {
-                    justify-self: flex-end;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                }
                 &.active {
                     animation-name: show-from-left;
                 }
@@ -88,16 +113,19 @@
                 }
             }
             .login-confirm {
-                flex: 1;
                 .back-to-username {
                     display: flex;
                     align-items: center;
-
                     .username {
+                        margin-left: 0.5em;
                         font-size: 1rem;
                         font-weight: 500;
                     }
                 }
+                .input-password {
+                    margin-top: -1em;
+                }
+
                 &.active {
                     animation-name: show-from-right;
                 }

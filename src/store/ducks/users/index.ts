@@ -1,13 +1,13 @@
 import { Reducer } from 'redux';
-import { UsersState, UsersTypes } from './types';
+import { IUsersState, UsersTypes } from './types';
 
-const INITIAL_STATE: UsersState = {
+const INITIAL_STATE: IUsersState = {
   users: [],
   error: false,
   loading: false,
 };
 
-const reducer: Reducer<UsersState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<IUsersState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UsersTypes.LOAD_REQUEST:
       return { ...state, loading: true };

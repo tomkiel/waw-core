@@ -35,6 +35,7 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   settings: {
     'import/parsers': {

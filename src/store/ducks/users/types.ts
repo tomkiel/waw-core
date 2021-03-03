@@ -11,7 +11,7 @@ export enum UsersTypes {
 /**
  * Data Types
  */
-export interface User {
+export interface IUser {
   username: string;
   password: string;
 }
@@ -19,8 +19,8 @@ export interface User {
 /**
  * State Types
  */
-export interface UsersState {
-  readonly users: User[];
+export interface IUsersState {
+  readonly users: IUser[];
   readonly loading: boolean;
   readonly error: boolean;
 }

@@ -1,8 +1,10 @@
-import { action } from 'typesafe-actions';
-import { UsersTypes, User } from './types';
+import { Action, action } from 'typesafe-actions';
+import { UsersTypes, IUser } from './types';
 
-export const loadRequest = () => action(UsersTypes.LOAD_REQUEST);
+export const loadRequest = (): Action<UsersTypes> => action(UsersTypes.LOAD_REQUEST);
 
-export const loadSuccess = (data: User[]) => action(UsersTypes.LOAD_SUCCESS, { data });
+export const loadSuccess = (data: IUser[]): Action<any> => action(
+  UsersTypes.LOAD_SUCCESS, { data },
+);
 
-export const loadFailure = () => action(UsersTypes.LOAD_FAILURE);
+export const loadFailure = (): Action<UsersTypes> => action(UsersTypes.LOAD_FAILURE);
