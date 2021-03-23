@@ -40,6 +40,23 @@ button {
         padding: 0;
     }
 
+    &.anchor {
+        display: flex !important;
+        justify-content: flex-start !important;
+        background-color: transparent !important;
+        min-height: auto!important;
+        font-weight: 600;
+        color: #501792;
+        text-decoration: none;
+        font-size: 0.8rem;
+        margin: 0;
+        line-height: 1rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     &[type="submit"] {
         min-width: 7.71em;
     }

@@ -21,6 +21,13 @@ const reducer: Reducer<IAuthState> = (state = INITIAL_STATE, action: AuthAction)
         ...state,
         user: action.auth,
         loading: false,
+        error: false,
+      };
+    case AuthTypes.AUTH_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: true,
       };
     case AuthTypes.AUTH_USER_EXISTS_REQUEST:
       return {
@@ -47,10 +54,9 @@ const reducer: Reducer<IAuthState> = (state = INITIAL_STATE, action: AuthAction)
         ...state,
         viewPasswordInput: action.viewPasswordInput,
       };
-    case AuthTypes.AUTH_FAILURE:
+    case AuthTypes.LOGOUT_REQUEST:
       return {
-        loading: false,
-        error: true,
+        ...state,
       };
     case AuthTypes.LOGOUT:
       return INITIAL_STATE;

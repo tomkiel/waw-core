@@ -1,0 +1,36 @@
+@import "./styles/dash/dashActions";
+@import "./styles/navActions";
+@import "./styles/dash/dashList";
+@import "./styles/sidebar/userSidebar";
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 3.45em;
+
+  .navHeader {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+
+    .navBrand {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .brandText {
+        .container {
+          padding: 0 0.5em;
+
+          span {
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}

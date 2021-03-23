@@ -31,3 +31,21 @@
     opacity: 1;
   }
 }
+@keyframes show-from-up-left {
+  0% {
+    transform: translate(-200px, -200px);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-180px, -150px);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-160px, -100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}

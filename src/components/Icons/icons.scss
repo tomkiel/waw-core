@@ -1,0 +1,15 @@
+.custom-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  margin: 0;
+  
+  svg {
+    fill: #ffff;
+    width: 100%;
+    height: 100%;
+  }
+}

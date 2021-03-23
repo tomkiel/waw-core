@@ -9,10 +9,13 @@ import {
   AuthUserExistsFailure,
   AuthUserExistsRequest,
   AuthViewPasswordInput,
+  RefreshTokenRequest,
+  AuthLogoutRequest,
 } from './types';
 
-export const authRequest = (): AuthRequest => ({
+export const authRequest = (auth: IAuth) : AuthRequest => ({
   type: AuthTypes.AUTH_REQUEST,
+  auth,
 });
 
 export const authSuccess = (auth: IAuth): AuthSuccess => ({
@@ -23,6 +26,10 @@ export const authSuccess = (auth: IAuth): AuthSuccess => ({
 export const authFailure = (error: boolean): AuthFailure => ({
   type: AuthTypes.AUTH_FAILURE,
   error,
+});
+
+export const refreshToken = (): RefreshTokenRequest => ({
+  type: AuthTypes.REFRESH_TOKEN_REQUEST,
 });
 
 export const authUserExistsRequest = (username: string): AuthUserExistsRequest => ({
@@ -43,6 +50,10 @@ export const authUserExistsFailure = (error: boolean): AuthUserExistsFailure => 
 export const authViewPasswordInput = (viewPasswordInput: boolean) : AuthViewPasswordInput => ({
   type: AuthTypes.AUTH_VIEW_PASSWORD_INPUT,
   viewPasswordInput,
+});
+
+export const authLogoutRequest = (): AuthLogoutRequest => ({
+  type: AuthTypes.LOGOUT_REQUEST,
 });
 
 export const authLogout = (): AuthLogout => ({

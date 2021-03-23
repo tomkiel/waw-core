@@ -2,13 +2,14 @@
  *  Action types
  */
 
-import { IUser } from '../../users/types';
+import { IUser } from '../users/types';
 
-// eslint-disable-next-line no-shadow
 export enum AuthTypes {
   AUTH_REQUEST = '@auth/AUTH_REQUEST',
   AUTH_SUCCESS = '@auth/AUTH_SUCCESS',
   AUTH_FAILURE = '@authAUTH_FAILURE',
+
+  REFRESH_TOKEN_REQUEST = '@auth/REFRESH_TOKEN_REQUEST',
 
   AUTH_USER_EXISTS_REQUEST = '@auth/AUTH_USER_EXISTS_REQUEST',
   AUTH_USER_EXISTS = '@auth/AUTH_USER_EXISTS',
@@ -16,6 +17,7 @@ export enum AuthTypes {
 
   AUTH_VIEW_PASSWORD_INPUT = '@auth/AUTH_VIEW_PASSWORD_INPUT',
 
+  LOGOUT_REQUEST = '@auth/LOGOUT_REQUEST',
   LOGOUT = '@auth/LOGOUT'
 }
 
@@ -25,10 +27,14 @@ export enum AuthTypes {
 export interface IAuth {
   username: string;
   password: string;
+  user?: IUser;
+  token?: string;
+  refreshToken?: string;
 }
 
 export interface AuthRequest {
   type: AuthTypes.AUTH_REQUEST;
+  auth: IAuth
 }
 
 export interface AuthSuccess {
@@ -39,6 +45,10 @@ export interface AuthSuccess {
 export interface AuthFailure {
   type: AuthTypes.AUTH_FAILURE;
   error: boolean
+}
+
+export interface RefreshTokenRequest {
+  type: AuthTypes.REFRESH_TOKEN_REQUEST;
 }
 
 export interface AuthUserExistsRequest {
@@ -61,6 +71,10 @@ export interface AuthViewPasswordInput {
   viewPasswordInput: boolean;
 }
 
+export interface AuthLogoutRequest {
+  type: AuthTypes.LOGOUT_REQUEST;
+}
+
 export interface AuthLogout {
   type: AuthTypes.LOGOUT;
 }
@@ -69,10 +83,12 @@ export type AuthAction =
   | AuthRequest
   | AuthSuccess
   | AuthFailure
+  | RefreshTokenRequest
   | AuthUserExistsRequest
   | AuthUserExists
   | AuthUserExistsFailure
   | AuthViewPasswordInput
+  | AuthLogoutRequest
   | AuthLogout;
 
 /**

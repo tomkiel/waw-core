@@ -1,0 +1,103 @@
+.userSidebar {
+  background-color: #faf9f8;
+  position: fixed;
+  top: 3.45em;
+  right: 0;
+  height: calc(100vh - 3em);
+  width: 23vw;
+  min-width: 320px;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border-color: #edebe9;
+  cursor: default;
+
+  &.hidden {
+    transition: 0.6s;
+    right: -100vw;
+  }
+
+  &.active {
+    transition: 0.6s;
+  }
+
+  .userSidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+
+    .titleSidebar {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-left: 0.8em;
+      color: #252423;
+    }
+
+    .closeSidebar {
+      width: 3em;
+      height: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 2.9em;
+        height: 2.9em;
+        padding: 0.7em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  .sidebarContent {
+    display: flex;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 0.2em;
+
+    .sidebarAvatar {
+      display: flex;
+      align-items: center;
+      padding: 0.5em;
+      .icon {
+        background-color: #e3008c;
+        width: 4.5em;
+        height: 4.5em;
+        border-radius: 50%;
+        padding: 0.7em;
+      }
+    }
+    .sidebarResume {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.1em 0;
+
+      .userName {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .userEmail {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #252423;
+      }
+
+      .moreInfos {
+        padding: 0.2em 0;
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin-bottom: 0.2em;
+        }
+      }
+    }
+  }
+}

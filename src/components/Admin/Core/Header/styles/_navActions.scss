@@ -1,0 +1,118 @@
+.navActions {
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+  .appActions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 3.45em;
+      height: 100%;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+
+        .icon {
+          width: 1.6em;
+          height: 1.6em;
+          padding: 0.5em;
+          border-radius: 50%;
+
+          span {
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-weight: 600;
+          }
+
+          &.userIcon {
+            background-color: #e3008c;
+          }
+        }
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .navNotificationStatus {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #1d3ea1;
+        color: white;
+        display: flex;
+        justify-content: center;
+        transition: 0.3s;
+        top: 0.5em;
+        right: 0.6em;
+
+        .ntiCounter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          color: rgb(255, 255, 255);
+          font-size: 0.7rem;
+          font-weight: 600;
+          cursor: inherit;
+          padding: 0.1em 0.5em;
+        }
+      }
+
+      .userStatus {
+        background-color: #6bb700;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        position: absolute;
+        width: 0.65em;
+        height: 0.65em;
+        right: 0.5em;
+        top: 2em;
+      }
+
+      &.user {
+        transition: 0.5s;
+
+        &.active {
+          button {
+            background-color: #f3f2f1;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .navNotificationStatus {
+          background-color: #ffffff;
+
+          .ntiCounter {
+            color: #1d3ea1;
+          }
+        }
+      }
+    }
+  }
+}

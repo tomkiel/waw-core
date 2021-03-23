@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BackIcon } from '@fluentui/react-icons';
 
-import * as authActions from '../../store/ducks/auth/login/actions';
-import { IAuth, IAuthState } from '../../store/ducks/auth/login/types';
-import { ApplicationState } from '../../store';
+import * as authActions from '../../../../store/ducks/auth/actions';
+import { IAuth, IAuthState } from '../../../../store/ducks/auth/types';
+import { ApplicationState } from '../../../../store';
+
+import './login.scss';
 
 export default function Login(): React.ReactElement {
   useEffect(() => {
@@ -31,6 +33,10 @@ export default function Login(): React.ReactElement {
     dispatch(authActions.authViewPasswordInput(view));
   }
 
+  function handleLoginAction() {
+    dispatch(authActions.authRequest(inputs));
+  }
+
   return (
     <div className="login-page">
       <div className="login-box">
@@ -44,7 +50,7 @@ export default function Login(): React.ReactElement {
             <div className="input input-username">
               <h4>Entrar</h4>
               <input type="text" className="text-box" placeholder="Usuário ou e-mail" name="username" value={username} onChange={handleChange} />
-              {status.error && <span className="error-message">Usuário inválido ou não encontrado!</span>}
+              {status.error && <span className="error-message">Essa conta não existe!</span>}
             </div>
             <div className="create-account">
               <span>Não tem uma conta?</span>
@@ -72,12 +78,13 @@ export default function Login(): React.ReactElement {
             <div className="input input-password">
               <h4>Insira sua senha</h4>
               <input type="password" className="text-box" placeholder="Senha de acesso" name="password" value={password} onChange={handleChange} />
+              {status.error && <span className="error-message">Sua conta ou senha está incorreta!</span>}
             </div>
             <div className="help">
               <a href="http://#">Esqueceu a senha?</a>
             </div>
             <div className="to-action to-confirm">
-              <button className="primary" type="submit">
+              <button className="primary" type="submit" onClick={() => handleLoginAction()}>
                 Entrar
               </button>
             </div>
