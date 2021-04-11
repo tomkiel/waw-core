@@ -52,6 +52,7 @@ export default function Header({ color }: IHeader): React.ReactElement {
 
   function toRoute(route: string) {
     history.push(route);
+    dispatch(globalActions.viewUserSidebarAction(false));
   };
 
   function toLogout() {

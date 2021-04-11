@@ -26,6 +26,27 @@ button {
         }
     }
 
+    &.danger {
+        color: #fff;
+        background-color: var(--danger);
+
+        &:focus {
+            box-sizing: border-box;
+            outline: 1px solid #fff;
+            outline-offset: -3px;
+        }
+        &:active {
+            background-color: var(--danger-dark);
+            outline: none;
+            transform: scale(0.98);
+        }
+        &:hover {
+            background-color: var(--danger-twilight);
+            outline: none;
+        }
+    }
+
+
     &.transparent {
         background-color: transparent;
 
