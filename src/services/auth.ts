@@ -8,7 +8,7 @@ export const isAuthenticated = (): boolean => {
   if (token) {
     const decodedToken: any = jwt(token);
     const dateNow = new Date();
-    if (decodedToken.exp < dateNow.getTime()) {
+    if (decodedToken.exp < Number(JSON.stringify(dateNow.getTime()).slice(0, -3))) {
       store.dispatch(authActions.refreshToken());
     }
     return true;
